@@ -10,53 +10,31 @@
 
 @implementation FISFiboFinder
 
-//define methods here
 -(NSUInteger)fibonacciNumberAtIndex:(NSUInteger)index {
 //    Fn0 = 0
 //    Fn1 = 1
 //    Fn2 = Fn1 + Fn2
 //    [...]
 //    FnN = Fn(N-1)+(Fn(N-2)
+    if (index == 0)
+        return 0;
+    if (index == 1)
+        return 1;
+
     NSMutableArray *fibSequence = [@[]mutableCopy];
-    
-//    fibSequence[0] = @0;
-//    fibSequence[1] = @1;
-    [fibSequence addObject:@12345]; //this allows fibSequence[1] to be Fn1, prevent OFB1 error
+
     [fibSequence addObject:@0];
     [fibSequence addObject:@1];
     
-//    NSUInteger idx = 3;
-//    do {
-//    
-//        
-//    } while (<#condition#>);
-    
-    
-    for (NSUInteger idx = 3; idx <= index; idx++) {
+    NSUInteger idx = 2;
+    do {
         [fibSequence addObject:[NSNumber numberWithUnsignedInteger:([fibSequence[idx - 1] intValue] + [fibSequence[idx - 2] intValue])]];
-        NSLog(@"fibSequence[%d] = %@", fibSequence[idx]);
-         }
-        
-//            NSUInteger fibIntIdxMinus1 = [fibSequence[idx - 1] intValue];
-//            NSUInteger fibIntIdxMinus2 = [fibSequence[idx - 2] intValue];
-//            
-//            NSUInteger fibIntIdx       = fibIntIdxMinus1 + fibIntIdxMinus2;
-//            fibSequence[idx] = [NSNumber numberWithUnsignedInteger:fibIntIdx];
-        
+        NSLog(@"fibSequence[%d] = %@", index, fibSequence[idx]);
+        idx++;
+    } while (idx <= index);
    
     NSLog(@"For index: %i, produced number %@", index, fibSequence[index]);
-    return [fibSequence[index] intValue];
-
-    
-    
-    
-    
-//    for (NSUInteger i = 0; i <= index; i++) {
-//        fibSequence addObject:<#(id)#>
-//    }
-    
-    
-    
+    return [fibSequence.lastObject intValue];
 }
 
 @end
