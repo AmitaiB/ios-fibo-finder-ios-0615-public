@@ -25,23 +25,24 @@
     [fibSequence addObject:@0];
     [fibSequence addObject:@1];
     
-    NSUInteger idx = 3;
-    do {
-        [fibSequence addObject:[NSNumber numberWithUnsignedInteger:([fibSequence[idx - 1] intValue] + [fibSequence[idx - 2] intValue])]];
-        NSLog(@"fibSequence[%d] = %@", fibSequence[idx]);
-    
-        
-    } while (<#condition#>);
+//    NSUInteger idx = 3;
+//    do {
+//    
+//        
+//    } while (<#condition#>);
     
     
     for (NSUInteger idx = 3; idx <= index; idx++) {
+        [fibSequence addObject:[NSNumber numberWithUnsignedInteger:([fibSequence[idx - 1] intValue] + [fibSequence[idx - 2] intValue])]];
+        NSLog(@"fibSequence[%d] = %@", fibSequence[idx]);
+         }
         
 //            NSUInteger fibIntIdxMinus1 = [fibSequence[idx - 1] intValue];
 //            NSUInteger fibIntIdxMinus2 = [fibSequence[idx - 2] intValue];
 //            
 //            NSUInteger fibIntIdx       = fibIntIdxMinus1 + fibIntIdxMinus2;
 //            fibSequence[idx] = [NSNumber numberWithUnsignedInteger:fibIntIdx];
-        }
+        
    
     NSLog(@"For index: %i, produced number %@", index, fibSequence[index]);
     return [fibSequence[index] intValue];
