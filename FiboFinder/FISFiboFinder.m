@@ -21,12 +21,20 @@
     
 //    fibSequence[0] = @0;
 //    fibSequence[1] = @1;
+    [fibSequence addObject:@12345]; //this allows fibSequence[1] to be Fn1, prevent OFB1 error
     [fibSequence addObject:@0];
     [fibSequence addObject:@1];
     
-    for (NSUInteger idx = 3; idx <= index; idx++) {
+    NSUInteger idx = 3;
+    do {
         [fibSequence addObject:[NSNumber numberWithUnsignedInteger:([fibSequence[idx - 1] intValue] + [fibSequence[idx - 2] intValue])]];
         NSLog(@"fibSequence[%d] = %@", fibSequence[idx]);
+    
+        
+    } while (<#condition#>);
+    
+    
+    for (NSUInteger idx = 3; idx <= index; idx++) {
         
 //            NSUInteger fibIntIdxMinus1 = [fibSequence[idx - 1] intValue];
 //            NSUInteger fibIntIdxMinus2 = [fibSequence[idx - 2] intValue];
