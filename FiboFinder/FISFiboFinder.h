@@ -11,5 +11,7 @@
 @interface FISFiboFinder : NSObject
 
 //declare methods here
+-(NSUInteger)fibonacciNumberAtIndex:(NSUInteger)index;
+
 
 @end
