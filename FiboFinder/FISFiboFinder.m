@@ -21,15 +21,6 @@
     else if (index == 1)
         return 1;
     else return [self fibonacciNumberAtIndex:(index -1)] + [self fibonacciNumberAtIndex:(index -2)];
-    
-    
-//    NSMutableArray *fibSequence = [NSMutableArray arrayWithCapacity:index];
-//    
-//    
-//    [fibSequence insertObject:((NSUInteger)fibonacciNumberAtIndex:(index-1)+(NSUIntegerfibonacciNumberAtIndex:(index-2)) atIndex:index
-//     
-//     :[NSNumber numberWithUnsignedInteger:([fibSequence[idx - 1] intValue] + [fibSequence[idx - 2] intValue])]];
-
 }
 
 @end
