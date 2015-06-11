@@ -16,12 +16,21 @@
 //    Fn2 = Fn1 + Fn2
 //    [...]
 //    FnN = Fn(N-1)+(Fn(N-2)
+    NSMutableArray *fibSequence = [NSMutableArray arrayWithCapacity:index];
+    
+    
+    [fibSequence insertObject:((NSUInteger)fibonacciNumberAtIndex:(index-1)+(NSUIntegerfibonacciNumberAtIndex:(index-2)) atIndex:index
+     
+//     :[NSNumber numberWithUnsignedInteger:([fibSequence[idx - 1] intValue] + [fibSequence[idx - 2] intValue])]];
+
+   
+    
+    
     if (index == 0)
         return 0;
     if (index == 1)
         return 1;
 
-    NSMutableArray *fibSequence = [@[]mutableCopy];
 
     [fibSequence addObject:@0];
     [fibSequence addObject:@1];
