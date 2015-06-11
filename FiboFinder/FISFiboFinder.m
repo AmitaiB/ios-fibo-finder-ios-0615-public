@@ -18,23 +18,9 @@
 //    FnN = Fn(N-1)+(Fn(N-2)
     if (index == 0)
         return 0;
-    if (index == 1)
+    else if (index == 1)
         return 1;
-
-    NSMutableArray *fibSequence = [@[]mutableCopy];
-
-    [fibSequence addObject:@0];
-    [fibSequence addObject:@1];
-    
-    NSUInteger idx = 2;
-    do {
-        [fibSequence addObject:[NSNumber numberWithUnsignedInteger:([fibSequence[idx - 1] intValue] + [fibSequence[idx - 2] intValue])]];
-        NSLog(@"fibSequence[%d] = %@", index, fibSequence[idx]);
-        idx++;
-    } while (idx <= index);
-   
-    NSLog(@"For index: %i, produced number %@", index, fibSequence[index]);
-    return [fibSequence.lastObject intValue];
+    else return [self fibonacciNumberAtIndex:(index -1)] + [self fibonacciNumberAtIndex:(index -2)];
 }
 
 @end
